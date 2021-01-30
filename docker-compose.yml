@@ -5,7 +5,7 @@ services:
   order-service:  
     restart: always 
     build: ./order-service 
-    image: dhanushkamath/burgernaut-order-service:1.0.0
+    image: burgernaut-order-service:1.0.0
     depends_on:
       - mongo
       - rabbitmq
@@ -20,7 +20,7 @@ services:
   restaurant-service: 
     restart: always 
     build: ./restaurant-service 
-    image: dhanushkamath/burgernaut-restaurant-service:1.0.0
+    image: burgernaut-restaurant-service:1.0.0
     depends_on:
       - mongo
       - rabbitmq
@@ -33,7 +33,7 @@ services:
   email-service:  # node application
     restart: always # automatically restart if the app fails
     build: ./email-service # build the image from the dockerfile present in the restaurant-service directory
-    image: dhanushkamath/burgernaut-email-service:1.0.0
+    image: burgernaut-email-service:1.0.0
     depends_on:
       - rabbitmq
     environment: # environment variables
